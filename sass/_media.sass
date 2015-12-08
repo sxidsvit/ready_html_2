@@ -2,7 +2,7 @@
 
 @media only screen and (min-height : 899px)
 	.header-content
-		padding: 16% 0
+		padding: 18% 0
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
@@ -10,11 +10,13 @@
 		.responsive-img
 			width: auto
 			max-width: 100%
-
+	.phone
+		padding-right: 50px
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
-	/**/
+	.ishome h1
+		font-size: em(34)
 
 
 /* Small Devices, Tablets */
@@ -41,11 +43,32 @@
 		-ms-animation: none !important
 		animation: none !important
 
+	.mnu-line
+		text-align: center
+		.logo
+			display: inline-block
+		.phone
+			text-align: center
+			padding: 0
+			margin-top: 25px
+		.toggle-mnu 
+			top: -50px
+		.hidden-mnu
+			font-size: em(15px)
+			text-transform: uppercase
+
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-	/**/
-
+	.ishome h1
+		font-size: em(30)
+		margin-top: 30px
+	.header-content 
+	.header-content
+		text-align: center
+		ul
+			li
+				font-size: em(16px)
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)

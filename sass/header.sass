@@ -11,30 +11,30 @@ body
 	overflow-x: hidden
 	color: #222
 
-h1, h2, h3,h4,h5,h6
+h1, h2, h3, h4, h5, h6
 	font-family: "OpenSansLight", sans-serif
 	font-weight: normal
 
-h1 
+h1
 	font-size: em(41)
-	line-height: 1.2
+	line-height: 1.15
 
 .ishome
 	h1
 		margin-top: 0
 
-h2 
+h2
 	font-size: em(32)
 
 h3, h4
-	font-family: "OpenSansSemaBold", sans-serif
+	font-family: "OpenSansSemiBold", sans-serif
 	text-transform: uppercase
 	font-size: em(15px)
 
 h4
-	font-size: em(13px)	
+	font-size: em(13px)
 
-a 
+a
 	color: $accent
 	outline: none !important
 
@@ -42,7 +42,7 @@ a
 	display: none
 
 .main-head
-	background-image: url("img/bg_top.jpg")
+	background-image: url(img/bg_top.jpg)
 	background-size: cover
 	background-position: top center
 	min-height: 100vh
@@ -57,12 +57,13 @@ a
 	img
 		width: 100%
 
-nav, .header-content 
+nav,
+.header-content
 	ul
 		list-style-type: none
 		padding: 0
 		margin: 0
-	li 
+	li
 		display: inline-block
 
 .main-mnu
@@ -70,11 +71,11 @@ nav, .header-content
 	font-size: em(13px)
 	> ul
 		> li
-			> a 
+			> a
 				display: block
-				padding: 10px 16px
+				padding: 12px 18px
 				color: #7e91a4
-				+mt(0.5s)
+				+mt(.5s)
 				&:hover
 					color: #414e5b
 			&.active
@@ -86,44 +87,44 @@ nav, .header-content
 	text-align: right
 	line-height: 1.4
 	.phone-wrap
-		color: #41435b
+		color: #414e5b
 		font-family: "Exo2Bold", sans-serif
 		font-size: em(20px)
 		line-height: em(14px)
-		.fa 
-			font-size:  em(18px)
+		.fa
+			font-size: em(18px)
 			position: relative
-			top: 1px
-			margin-right: 7px
+			top: 2px
+			margin-right: 5px
 	.callback
 		color: #7e91a4
 		display: inline-block
 		font-size: em(13px)
-		line-height: em(18px)
+		line-height: em(20px)
 		border-bottom: 1px dashed #7e91a4
-		+mt(0.3s)
-		&:hover
+		+mt(.3s)
+		&:hover, &:focus
 			text-decoration: none
 			border-color: transparent
 
 .header-content
-	padding: 10% 0 
+	padding: 10% 0 5%
 	ul
-		margin-top: 30px 0
+		margin-top: 42px
+		text-align: left
 		li
 			display: block
 			color: #414e5b
 			text-transform: uppercase
 			font-family: "OpenSansSemiBold", sans-serif
 			font-size: em(17px)
-			line-height: 1.9
-	.fa 
-		margin-right: 10px
+			line-height: 1.8
 	.button
-		margin-top: 50px
+		margin-top: 62px
 	.responsive-img
 		width: 675px
 		max-width: 675px
+
 
 .button
 	display: inline-block
@@ -149,3 +150,122 @@ nav, .header-content
 .responsive-img
 	max-width: 100%
 
+// Mouse Wheel Icon
+.mouse-icon
+	border: 2px solid $blue
+	border-radius: 16px
+	height: 40px
+	width: 24px
+	z-index: 10
+	opacity: 0.7
+	display: inline-block
+	.wheel
+		animation-name: drop
+		animation-duration: 1s
+		animation-timing-function: linear
+		animation-delay: 0s
+		animation-iteration-count: infinite
+		animation-play-state: running
+		position: relative
+		border-radius: 10px
+		background: $blue
+		width: 2px
+		height: 6px
+		top: 4px
+		margin-left: auto
+		margin-right: auto
+
+@-webkit-keyframes drop
+	0%
+		top: 5px
+		opacity: 0
+
+	30%
+		top: 10px
+		opacity: 1
+
+	100%
+		top: 25px
+		opacity: 0
+
+
+@keyframes drop
+	0%
+		top: 5px
+		opacity: 0
+
+	30%
+		top: 10px
+		opacity: 1
+
+	100%
+		top: 25px
+		opacity: 0
+
+.mw-wrapper
+	text-align: center
+	padding: 40px 0
+
+//Toggle Mnu
+.toggle-mnu 
+	display: block
+	width: 28px
+	height: 28px
+	margin-top: 14px
+
+	span:after, span:before 
+		content: ""
+		position: absolute
+		left: 0
+		top: 9px
+
+	span:after
+		top: 18px
+
+	span 
+		position: relative
+		display: block
+
+	span, span:after, span:before
+		width: 100%
+		height: 2px
+		background-color: $blue
+		transition: all 0.3s
+		backface-visibility: hidden
+		border-radius: 2px
+
+
+	&.on span 
+		background-color: transparent
+
+	&.on span:before 
+		transform: rotate(45deg) translate(-1px, 0px)
+
+	&.on span:after 
+		transform: rotate(-45deg) translate(6px, -7px)
+
+.toggle-mnu
+	position: absolute
+	top: 0
+	right: 15px
+
+.hidden-mnu
+	background-color: $blue
+	display: none
+	position: relative
+	top: 20px
+	li
+		display: block
+			
+	> ul
+		padding: 20px 0
+		> li
+			&.active
+				a
+					text-decoration: underline
+					color: $accent
+			> a
+				&:hover
+					color: #fff
+					background-color: $accent
+					text-decoration: none
