@@ -1,18 +1,16 @@
-$(document).ready(function() {
+$(function() {
+
+	$(".mouse-icon").click(function() {
+		$("html, body").animate({
+			scrollTop : $(".s-adv").offset().top
+		}, 800);
+	});
 
 	$(".toggle-mnu").click(function() {
 		$(this).toggleClass("on");
 		$(".main-mnu").slideToggle();
 		return false;
 	});
-
-
-	//Цели для Яндекс.Метрики и Google Analytics
-	$(".count_element").on("click", (function() {
-		ga("send", "event", "goal", "goal");
-		yaCounterXXXXXXXX.reachGoal("goal");
-		return true;
-	}));
 
 	//SVG Fallback
 	if(!Modernizr.svg) {
@@ -21,18 +19,19 @@ $(document).ready(function() {
 		});
 	};
 
-	//Аякс отправка форм
-	//Документация: http://api.jquery.com/jquery.ajax/
-	$("#form").submit(function() {
+	//E-mail Ajax Send
+	//Documentation & Example: https://github.com/agragregra/uniMail
+	$("form").submit(function() { //Change
+		var th = $(this);
 		$.ajax({
 			type: "POST",
-			url: "mail.php",
-			data: $(this).serialize()
+			url: "mail.php", //Change
+			data: th.serialize()
 		}).done(function() {
-			alert("Спасибо за заявку!");
+			alert("Thank you!");
 			setTimeout(function() {
-				
-				$("#form").trigger("reset");
+				// Done Functions
+				th.trigger("reset");
 			}, 1000);
 		});
 		return false;

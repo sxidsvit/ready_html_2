@@ -1,5 +1,6 @@
 /*==========  Desktop First Method  ==========*/
 
+/* Custom Media Queries */
 @media only screen and (min-height : 899px)
 	.header-content
 		padding: 18% 0
@@ -17,6 +18,9 @@
 @media only screen and (max-width : 992px)
 	.ishome h1
 		font-size: em(34)
+	.col-md-6:last-child
+		.button
+			margin-top: 20px
 
 
 /* Small Devices, Tablets */
@@ -57,12 +61,20 @@
 			font-size: em(15px)
 			text-transform: uppercase
 
+	.s-profile
+		h2
+			margin-top: 30px
+	
+	.ishome
+		h2
+			font-size: em(28px)
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
 	.ishome h1
 		font-size: em(30)
 		margin-top: 30px
+	.header-content 
 	.header-content
 		text-align: center
 		ul
