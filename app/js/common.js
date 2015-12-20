@@ -1,5 +1,7 @@
 $(function() {
 
+
+
 	$(".mfp-gallery").each(function() {
 		$(this).magnificPopup({
 			delegate: 'a',
