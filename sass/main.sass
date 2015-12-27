@@ -204,7 +204,7 @@ body textarea:required:valid
 	.col-md-2,
 	.col-md-5,
 	.col-md-6
-		padding: 0     // Убираем левый падинг для картинки
+		padding: 0
 	.portfolio-item
 		position: relative
 		display: block
@@ -215,7 +215,7 @@ body textarea:required:valid
 		&:hover
 			.portfolio-item-content
 				opacity: 1
-				transform: scale(.90)
+				transform: scale(.95)
 			img
 				transform: scale(1.1)
 		&-content
@@ -242,7 +242,7 @@ body textarea:required:valid
 	margin: 3% auto
 	text-align: center
 	padding-top: 25px
-	+mt(.25s)
+	+mt(.3s)
 	.responsive-img
 	.row, .col-sm-12
 		display: block
@@ -275,12 +275,12 @@ body textarea:required:valid
 .my-mfp-zoom-in
 	.portfolio-popup
 		opacity: 0
-		transform: scale(0.8)
+		transform: scale(0.95)
 	&.mfp-ready .portfolio-popup
 		opacity: 1
 		transform: scale(1)
 	&.mfp-removing .portfolio-popup
-		transform: scale(0.8)
+		transform: scale(0.95)
 		opacity: 0
 	&.mfp-bg
 		opacity: 0
@@ -290,6 +290,79 @@ body textarea:required:valid
 	&.mfp-removing.mfp-bg
 		opacity: 0
 
+*
+	transition: filter .25s ease
+.mfp-wrap ~ *
+	filter: blur(5px)
+
+.carousel-wrap
+	margin-bottom: 25px
+	box-shadow: #D7D7D7 0 0 0 5px inset
+	padding: 0 0 30px
+	+mt(.25s)
+	text-align: center
+	background-color: #F8F8F8
+	&:hover
+		box-shadow: $accent 0 0 0 5px inset
+		background-color: #EBEBEB
+		h3
+			color: $accent
+		.button
+			background-color: $accent
+			box-shadow: 0px 4px 0px darken($accent, 6%)
+			color: #fff
+			&:active, &:focus
+				background-color: darken($accent, 6%)
+				box-shadow: 0px 4px 0px darken($accent, 6%)
+		.car-img-wrap
+			svg
+				path
+					fill: $accent !important
+					opacity: 1
+	.car-img-wrap
+		position: relative
+		svg, .img-svg
+			position: absolute
+			max-height: 44px
+			left: 0
+			top: 25px
+			path
+				opacity: .7
+				+mt(.25s)
+				fill: #fff!important
+	h3
+		+mt(.25s)
+		font-size: em(17px)
+		font-family: "OpenSansBold", sans-serif
+	p
+		font-size: em(13px)
+		color: #444
+		margin-bottom: 20px
+	.carousel-text
+		padding: 0 20px
+	.button
+		margin-top: 20px
+
+.s-equipment
+	h2
+		margin-bottom: 60px
+
+.carousel-eq
+	.carousel-wrap
+		margin: 15px
+	.owl-dots
+		text-align: center
+		margin-top: 25px
+		.owl-dot
+			width: 14px
+			height: 14px
+			background-color: #D7D7D7
+			border-radius: 10em
+			display: inline-block
+			margin: 3px
+			&.active
+				background-color: $accent
+
 //ALWAYS END
 @import "_media.sass"
 
@@ -297,3 +370,4 @@ body textarea:required:valid
 @import app/libs/animate/animate.sass
 @import app/libs/font-awesome/css/font-awesome.sass
 @import app/libs/Magnific-Popup/magnific-popup.sass
+@import app/libs/owl-carousel/assets/owl.carousel.sass
