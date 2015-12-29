@@ -298,6 +298,7 @@ body textarea:required:valid
 .carousel-wrap
 	margin-bottom: 25px
 	box-shadow: #D7D7D7 0 0 0 5px inset
+	// border: 5px solid $accent
 	padding: 0 0 30px
 	+mt(.25s)
 	text-align: center
@@ -362,6 +363,53 @@ body textarea:required:valid
 			margin: 3px
 			&.active
 				background-color: $accent
+
+.tizer-text
+	font-family: "OpenSansLight", sans-serif
+	font-size: em(19px)
+	margin-bottom: 50px
+
+.item-vertical-2
+	margin-top: 55px
+	&:hover
+		.rounded-img-wrap
+			transform: scale(1.15)
+		.iv-phone
+			color: $accent
+	text-align: center
+	h3
+		font-size: em(17px)
+		font-family: "OpenSansBold", sans-serif
+		color: #444
+		margin-top: 40px
+		margin-bottom: 10px
+	p
+		font-size: em(13px)
+		color: #666
+		letter-spacing: 2px
+		margin-top: 0
+
+.iv-phone
+	margin-top: 22px
+	color: #999
+	font-family: "Exo2Bold", sans-serif
+	font-size: em(17px)
+	+mt(.5s)
+	i
+		font-size: 19px
+		margin-right: 3px
+
+.rounded-img-wrap
+	border-radius: 10em
+	border: $accent 6px solid
+	overflow: hidden
+	width: 125px
+	height: 125px
+	text-align: center
+	margin: auto
+	+mt(.5s)
+	img
+		max-width: 100%
 
 //ALWAYS END
 @import "_media.sass"
